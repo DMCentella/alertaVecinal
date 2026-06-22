@@ -4,7 +4,7 @@ Sistema de alerta vecinal basado en microservicios para la gestión de incidente
 
 Tecnologías
 Java 25
-Spring Boot 4.1.0
+Spring Boot 3.5.15
 Spring Cloud 2025.0.3
 Maven
 MySQL

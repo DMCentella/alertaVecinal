@@ -1,0 +1,364 @@
+{
+  "info": {
+    "_postman_id": "3eff60e9-1f0f-4cb4-8ff4-6fc20f7e5c4c",
+    "name": "alerta vecinal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52781166",
+    "_collection_link": "https://go.postman.co/collection/52781166-3eff60e9-1f0f-4cb4-8ff4-6fc20f7e5c4c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "crearUsuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\":\"Juan Perez\",\r\n  \"email\":\"juan@gmail.com\",\r\n  \"telefono\":\"999888777\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:80801/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "80801",
+          "path": [
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crearSerenazgo(provicional)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "loginUsuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"serenazgo1\",\r\n    \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crearIncidente",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaXVkYWRhbm8xIiwiaWF0IjoxNzgxMjc3MTk1LCJleHAiOjE3ODEzNjM1OTV9.ireu4gz1nlgFmanAzKoGiBidmLarL5BBosHPBBIxB00",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tipo\": \"ROBO\",\r\n    \"descripcion\": \"Asalto en la avenida principal\",\r\n    \"direccion\": \"Av. Perú\",\r\n    \"estado\": \"PENDIENTE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/incidents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "incidents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verIncidente",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaXVkYWRhbm8xIiwiaWF0IjoxNzgxMjU1NTU3LCJleHAiOjE3ODEzNDE5NTd9.sw_IBz2FtRiFfkBh1jjwnjK0ozYGkHN1VdAuxtCRtEg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/incidents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "incidents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verIncidentePorid",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/incidents/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "incidents",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarIncidente",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaXVkYWRhbm8xIiwiaWF0IjoxNzgxMjU1NTU3LCJleHAiOjE3ODEzNDE5NTd9.sw_IBz2FtRiFfkBh1jjwnjK0ozYGkHN1VdAuxtCRtEg",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tipo\": \"ROBO\",\r\n    \"descripcion\": \"Asalto confirmado\",\r\n    \"direccion\": \"Av. Perú\",\r\n    \"estado\": \"PENDIENTE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/incidents/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "incidents",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "VerIncidente(Serenazgo)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/serenazgo/incidentes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "serenazgo",
+            "incidentes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ActualizarEstado(Serenazgo)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZXJlbmF6Z28xIiwiaWF0IjoxNzgxMjg3OTk0LCJleHAiOjE3ODEzNzQzOTR9.78PzMrjrn871Y7pe1LmovwXIEYSz9MXuZd84_Vbh9T8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nuevoEstado\": \"EN_PROCESO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/serenazgo/incidentes/1/estado?serenazgoId=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "serenazgo",
+            "incidentes",
+            "1",
+            "estado"
+          ],
+          "query": [
+            {
+              "key": "serenazgoId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "VerHistorial(Serenazgo)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/serenazgo/incidentes/1/historial",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "serenazgo",
+            "incidentes",
+            "1",
+            "historial"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}

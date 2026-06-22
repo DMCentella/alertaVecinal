@@ -3,8 +3,8 @@ alertaVecinal
 Sistema de alerta vecinal basado en microservicios para la gestión de incidentes, patrullas, asignaciones y seguimiento operativo.
 
 Tecnologías
-Java 21
-Spring Boot 3.5.15
+Java 25
+Spring Boot 4.1.0
 Spring Cloud 2025.0.3
 Maven
 MySQL
